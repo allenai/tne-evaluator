@@ -49,7 +49,7 @@ A JSON file that has the different metrics we use in the range 0.0 to 1.0. For e
 
 ```bash
 % cat metrics.json 
-{"Labeled-p": 0.5, "Labeled-r": 0.5, "Labeled-f1": 0.5, "Unlabeled-p": 0.9, "Unlabeled-r": 0.3, "Unlabeled-f1": 0.4}
+{"labeled_p": 0.5, "labeled_r": 0.5, "labeled_f1": 0.5, "unlabeled_p": 0.9, "unlabeled_r": 0.3, "unlabeled_f1": 0.4}
 ```
 * The results here are invented, and do not represent the scoring functions
 
@@ -63,5 +63,7 @@ Run unit tests with `python3 test_evaluator.py`.
 
 Ultimately this evaluator is run in a Docker container. To test that it works there, run `test.sh`.
 
+## Publishing
 
-
+To build and publish a Beaker image as the Leaderboard user, use the script
+`publish_for_leaderboard.sh`.
