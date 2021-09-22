@@ -77,8 +77,8 @@ def temp_file_with_contents(lines: typing.List[str]) -> str:
 class TestReadAnswers(unittest.TestCase):
     def test_ReadAnswers(self):
         t = temp_file_with_contents([
-            '{"id": 1, "prepositions": [[0], [1]], "predicted_prepositions": [-1, 1]}\n',
-            '{"id": 2, "prepositions": [[0], [1, 2]], "predicted_prepositions": [0, 1]}\n',
+            '{"id": 1, "predicted_prepositions": [-1, 1]}\n',
+            '{"id": 2, "predicted_prepositions": [0, 1]}\n',
         ])
         answers = evaluate.load_data(t)
         os.remove(t)
@@ -86,12 +86,10 @@ class TestReadAnswers(unittest.TestCase):
         self.assertEqual(answers,
                          [
                              {'id': 1,
-                              'prepositions': [[0], [1]],
                               'predicted_prepositions': [-1, 1]
                               },
                              {
                                  'id': 2,
-                                 'prepositions': [[0], [1, 2]],
                                  'predicted_prepositions': [0, 1]
                              }
                          ])
