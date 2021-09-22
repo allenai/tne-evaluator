@@ -87,12 +87,12 @@ def evaluate_documents(gold_docs, pred_docs):
     f1_score = labeled_f1.get_metric(reset=True)
 
     scores = {
-        'Labeled-p': f1_score['precision'],
-        'Labeled-r': f1_score['recall'],
-        'Labeled-f1': f1_score['fscore'],
-        'Unlabeled-p': link_f1_score['precision'],
-        'Unlabeled-r': link_f1_score['recall'],
-        'Unlabeled-f1': link_f1_score['f1'],
+        'labeled_p': f1_score['precision'],
+        'labeled_r': f1_score['recall'],
+        'labeled_f1': f1_score['fscore'],
+        'unlabeled_p': link_f1_score['precision'],
+        'unlabeled_r': link_f1_score['recall'],
+        'unlabeled_f1': link_f1_score['f1'],
     }
     return scores
 
