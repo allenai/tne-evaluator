@@ -1,6 +1,6 @@
-# NPRED Evaluator
+# TNE Evaluator
 
-This script evaluates predictions for the NP RElation Discovery dataset
+This script evaluates predictions for the Text-based NP Enrichment dataset
  against correct answers and produces multiple scores.
 
 ## Example
